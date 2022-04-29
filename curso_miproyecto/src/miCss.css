@@ -1,0 +1,26 @@
+.fondo > .reyes{
+    background-color: goldenrod;
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    float: left;
+    margin-left: 1s0px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.fondo > .reyes > .reyes_img{
+    width: 300px;
+    display: flexbox;
+    flex-direction: right;
+    padding-top: 10px;
+    margin: auto;
+    visibility: visible;
+}
+
+.texto{
+    font-size: 20px;
+    text-align: center;
+    visibility: visible;
+}
