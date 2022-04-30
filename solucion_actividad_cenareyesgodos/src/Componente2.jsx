@@ -2,8 +2,9 @@ import React from 'react';
 import './componente.css';
 
 function Componente2(reyes) {
-    const comprar = () => {
+    const comprar = (j) => {
       reyes.setTotal((e) => e + reyes.precio);
+      j.target.parentNode.parentNode.style.display = 'none';
     }
   return (
     <div className='rey' style={{backgroundColor: reyes.color_style}}>
