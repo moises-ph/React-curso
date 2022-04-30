@@ -41,3 +41,17 @@
   flex-direction: column;
   align-items: center; 
 }
+input{
+  width: 70px;
+  height: 30px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+label{
+  color: red;
+} 

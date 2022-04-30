@@ -1,0 +1,5 @@
+div{
+    align-items: right;
+    display: flexbox;
+    flex-direction: right;
+}

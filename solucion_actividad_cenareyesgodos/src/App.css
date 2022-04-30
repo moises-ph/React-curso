@@ -1,0 +1,16 @@
+.rey{
+    color: white;
+    padding: 2px 15px 20px;
+    margin-bottom: 10px;
+    width: 420px;
+}
+ 
+.img{
+    width: 100%;
+}
+
+.cajacentral{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
