@@ -1,0 +1,13 @@
+*{
+  font-family: Roboto;
+  font-size: 25px;
+}
+
+.caja{
+  display: flex;
+  flex-direction: row;
+}
+
+.reyes{
+  margin: 50px;
+}

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './App.css';
 
 function App() {
   const reyes = [
@@ -40,12 +41,22 @@ function App() {
   ]
 
   
-  const resultado1=reyes.find(valor=>valor.nombre.includes("ú"));
-  console.log(resultado1)
+
+  const resultado = reyes.filter(valor=> 
+    valor.nombre.includes('g') == false).map(valor => {
+    const source = 'https://www.html6.es/img/rey_' + valor.nombre.toLowerCase() + '.png';
+    const total_vacas = valor.reinado * (valor.vacasComidas * 360);
+    return <div key={valor.nombre} className='rey'>
+      <div><span className='nombre_rey'>{valor.nombre.toUpperCase()}</span>
+       ha comido {total_vacas} vacas en sus {valor.reinado} años de reinado</div>
+      <img src= {source}/>
+    </div>;
+  });
   return (
     <>
+    <h1>Actividad 1.</h1>
       <div className='caja'>
-        {resultado1.nombre} come {resultado1.vacasComidas} vacas al dia
+        {resultado}
       </div>
     </>
   )
