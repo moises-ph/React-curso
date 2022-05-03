@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './App.css';
 
 
 function App() {
@@ -54,62 +55,65 @@ function App() {
     <>
       <h1>Calculadora</h1>
       <input type='text' value={resultado}></input>
-      <div>
+      <div className='caja'>
         <table>
           <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><button className='operador' onClick={reset}>AC</button></td>
+          </tr>
+          <tr>
             <td>
-              <button onClick={guardar_num} value='7'>7</button>
+              <button className='numero' onClick={guardar_num} value='7'>7</button>
             </td>
             <td>
-              <button onClick={guardar_num} value='8'>8</button>
+              <button className='numero' onClick={guardar_num} value='8'>8</button>
             </td>
             <td>
-              <button onClick={guardar_num} value='9'>9</button>
+              <button className='numero' onClick={guardar_num} value='9'>9</button>
             </td>
             <td>
-              <button onClick={operacion} value='-'>-</button>
+              <button className='operador' onClick={operacion} value='/'>÷</button>
             </td>
           </tr>
           <tr>
             <td>
-              <button onClick={guardar_num} value='4'>4</button>
+              <button className='numero' onClick={guardar_num} value='4'>4</button>
             </td>
             <td>
-              <button onClick={guardar_num} value='5'>5</button>
+              <button className='numero' onClick={guardar_num} value='5'>5</button>
             </td>
             <td>
-              <button onClick={guardar_num} value='6'>6</button>
+              <button className='numero' onClick={guardar_num} value='6'>6</button>
             </td>
             <td>
-              <button onClick={operacion} value='+'>+</button>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <button onClick={guardar_num} value='1'>1</button>
-            </td>
-            <td>
-              <button onClick={guardar_num} value='2'>2</button>
-            </td>
-            <td>
-              <button onClick={guardar_num} value='3'>3</button>
-            </td>
-            <td>
-              <button onClick={operacion} value='*'>*</button>
+              <button className='operador' onClick={operacion} value='*'>*</button>
             </td>
           </tr>
           <tr>
             <td>
-              <button onClick={guardar_num} value='0'>0</button>
+              <button className='numero' onClick={guardar_num} value='1'>1</button>
             </td>
             <td>
-              <button onClick={realizar} value='='>=</button>
+              <button className='numero' onClick={guardar_num} value='2'>2</button>
             </td>
             <td>
-              <button onClick={operacion} value='/'>/</button>
+              <button className='numero' onClick={guardar_num} value='3'>3</button>
             </td>
             <td>
-              <button onClick={reset}>AC</button>
+              <button className='operador' onClick={operacion} value='-'>-</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button className='numero' onClick={guardar_num} value='0'>0</button>
+            </td>
+            <td>
+              <button id='igual' onClick={realizar} value='='>=</button>
+            </td>
+            <td>
+              <button className='operador' onClick={operacion} value='+'>+</button>
             </td>
           </tr>
         </table>
