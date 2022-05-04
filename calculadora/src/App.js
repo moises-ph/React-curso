@@ -3,52 +3,23 @@ import './App.css';
 
 
 function App() {
-  const [numero1, setNumero1] = useState(null);
-  const [numero2, setNumero2] = useState(null);
-  const [operador, setOperador] = useState('');
-  const [resultado, setResultado] = useState(0);
+  const [numeros, setNumeros] = useState('');
+  const [resultado, setResultado] = useState('0');
 
 
   const reset = () => {
-    setNumero1(null);
-    setNumero2(null);
-    setOperador('');
     setResultado(0);
+    setNumeros([]);
   }
+
 
   const guardar_num = (e) => {
-    if(numero1 === null){
-      setNumero1(Number(e.target.value));
-      setResultado(e.target.value);
-    }
-    else if(operador === ''){
-      setNumero2(Number(e.target.value));
-      setResultado(resultado + e.target.value); 
-    }
+    setNumeros(numeros + e.target.value); 
+    setResultado(resultado + e.target.value);
   };
 
-  const operacion = (o) =>{
-    setOperador(o.target.value)
-    setResultado(resultado + o.target.value);
-  }
-
   const realizar = () =>{
-    const op = operador;
-    if(op === '-'){
-      setResultado( numero1 -  numero2);
-    }
-    else if( op === '+'){
-      setResultado( numero1 + numero2);
-    }
-    else if( op === '*'){
-      setResultado( numero1 * numero2);
-    }
-    else if( op === '/'){
-      setResultado( numero1 / numero2);
-    }
-    else{
-      setResultado('*INGRESE UNA OPERACION VALIDA*');
-    }
+    setResultado(eval(numeros));
   }
 
   return (
@@ -57,12 +28,6 @@ function App() {
       <input type='text' value={resultado}></input>
       <div className='caja'>
         <table>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><button className='operador' onClick={reset}>AC</button></td>
-          </tr>
           <tr>
             <td>
               <button className='numero' onClick={guardar_num} value='7'>7</button>
@@ -74,7 +39,7 @@ function App() {
               <button className='numero' onClick={guardar_num} value='9'>9</button>
             </td>
             <td>
-              <button className='operador' onClick={operacion} value='/'>÷</button>
+              <button className='operador' onClick={guardar_num} value='/'>÷</button>
             </td>
           </tr>
           <tr>
@@ -88,7 +53,7 @@ function App() {
               <button className='numero' onClick={guardar_num} value='6'>6</button>
             </td>
             <td>
-              <button className='operador' onClick={operacion} value='*'>*</button>
+              <button className='operador' onClick={guardar_num} value='*'>*</button>
             </td>
           </tr>
           <tr>
@@ -102,7 +67,7 @@ function App() {
               <button className='numero' onClick={guardar_num} value='3'>3</button>
             </td>
             <td>
-              <button className='operador' onClick={operacion} value='-'>-</button>
+              <button className='operador' onClick={guardar_num} value='-'>-</button>
             </td>
           </tr>
           <tr>
@@ -113,7 +78,10 @@ function App() {
               <button id='igual' onClick={realizar} value='='>=</button>
             </td>
             <td>
-              <button className='operador' onClick={operacion} value='+'>+</button>
+              <button className='operador' onClick={guardar_num} value='+'>+</button>
+            </td>
+            <td>
+              <button className='operador' onClick={reset}>AC</button>
             </td>
           </tr>
         </table>
