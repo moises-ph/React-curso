@@ -6,13 +6,16 @@
 }
 
 input{
-  width: 21rem;
+  width: 20.37rem;
   height: 4.5rem;
+  margin-left: 4px;
+  margin-bottom: 4px;
   border-style: solid;
   border-color: #6d6969;
   border-radius: 10px;
   border-width : 1px;
-  text-align:right;
+  text-align: right;
+  vertical-align:text-bottom;
   font-size: 30px;
   cursor: default;
 }
@@ -21,8 +24,20 @@ input:hover{
   background-color: #2e2e30;
 }
 
-button:hover{
-  background-color: #474747;
+.numero:hover{
+  background-color: #414548;
+}
+
+.operador:hover{
+  background-color: #707579;
+}
+
+button{
+  cursor: pointer;
+}
+
+.igual:hover{
+  background-color: #B0CBFA;
 }
 
 .numero{
@@ -33,23 +48,23 @@ button:hover{
   border-style: none;
   margin-left: 2%;
   margin-right: 2%;
-  margin-top: 5%;
-  margin-bottom: 2%;
+  margin-top: 2%;
+  margin-bottom: 1%;
 }
 
 .operador{
-  background-color: #70757A;
+  background-color: #5F6267;
   width: 5rem;
   height: 2.25rem;
   border-radius: 5px;
   border-style: none;
-  margin-left: 2%;
+  margin-left: 3%;
   margin-right: 2%;
-  margin-top: 5%;
-  margin-bottom: 2%;
+  margin-top: 2%;
+  margin-bottom: 1%;
 }
 
-#igual{
+.igual{
   background-color: #AECBFA;
   color: #202124;
   width: 5rem;
@@ -59,5 +74,5 @@ button:hover{
   margin-left: 2%;
   margin-right: 2%;
   margin-top: 5%;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
 }

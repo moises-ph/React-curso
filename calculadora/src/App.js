@@ -6,28 +6,43 @@ function App() {
   const [numeros, setNumeros] = useState('');
   const [resultado, setResultado] = useState('0');
 
-
   const reset = () => {
-    setResultado(0);
-    setNumeros([]);
+    setResultado('0');
+    setNumeros('');
   }
 
+  const guardar_num_porcentaje = () => {
+    setNumeros(numeros + '/100');
+    setResultado(resultado + '%');
+  }
 
   const guardar_num = (e) => {
     setNumeros(numeros + e.target.value); 
-    setResultado(resultado + e.target.value);
+    if(resultado === '0'){
+      setResultado(e.target.value);
+    }
+    else if(resultado !== '0'){
+      setResultado(resultado + e.target.value); 
+    }
   };
 
   const realizar = () =>{
     setResultado(eval(numeros));
+    setNumeros(eval(numeros));
   }
 
   return (
     <>
       <h1>Calculadora</h1>
-      <input type='text' value={resultado}></input>
       <div className='caja'>
+        <input type='text' value={resultado}></input>
         <table>
+          <tr>
+            <td><button className='operador' onClick={guardar_num} value='('>(</button></td>
+            <td><button className='operador' onClick={guardar_num} value=')'>)</button></td>
+            <td><button className='operador' onClick={guardar_num_porcentaje} value='%'>%</button></td>
+            <td><button className='operador' onClick={reset}>AC</button></td>
+          </tr>
           <tr>
             <td>
               <button className='numero' onClick={guardar_num} value='7'>7</button>
@@ -74,14 +89,12 @@ function App() {
             <td>
               <button className='numero' onClick={guardar_num} value='0'>0</button>
             </td>
+            <td><button className='numero' onClick={guardar_num} value='.'>.</button></td>
             <td>
-              <button id='igual' onClick={realizar} value='='>=</button>
+              <button className='igual' onClick={realizar} value='='>=</button>
             </td>
             <td>
               <button className='operador' onClick={guardar_num} value='+'>+</button>
-            </td>
-            <td>
-              <button className='operador' onClick={reset}>AC</button>
             </td>
           </tr>
         </table>
