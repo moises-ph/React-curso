@@ -5,18 +5,43 @@
   align-items: center;
 }
 
-input{
-  width: 20.37rem;
-  height: 4.5rem;
+.display .ANS{
+  font-size: 10px;
+  height: 40px;
+  margin-bottom: 50px;
+}
+
+.display  input{
+  border: 0;
+  text-align: right;
+  font-size: 30px;
+  user-select: none;
+  width: 100%;
+  cursor: text;
+  outline-color: #202124;
+  outline: none;
+  background-color:#202124;
+}
+
+.display input:hover{
+  background-color:#202124;
+}
+
+.display {
+  width: 25.37rem;
+  height: 6rem;
+  padding: 5px;
   margin-left: 4px;
   margin-bottom: 4px;
   border-style: solid;
   border-color: #6d6969;
   border-radius: 10px;
   border-width : 1px;
-  text-align: right;
-  vertical-align:text-bottom;
-  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  align-items: left;
+  justify-content: right;
   cursor: default;
 }
 
