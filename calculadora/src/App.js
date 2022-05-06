@@ -46,6 +46,7 @@ function App() {
   const reset = () => {
     setResultado('0');
     setNumeros('');
+    setLastnum('');
   }
 
   const factorial = () => {
@@ -54,7 +55,8 @@ function App() {
     for(let i = 1; i <= numero; i++){
       fact += i.toString() + '*';
     }
-    setNumeros(numeros.slice(0, -1) + fact.slice(0, -1));
+    console.log(numeros.slice(0, -(numero.length)) + fact.slice(0, -1))
+    setNumeros(numeros.slice(0, -(numero.length)) + fact.slice(0, -1));
     setResultado(resultado + '!');
   }
 
@@ -64,7 +66,12 @@ function App() {
   }
 
   const guardar_num = (e) => {
-    setLastnum(e.target.value);
+    if(e.target.value === '+' || e.target.value === '-' || e.target.value === '*' || e.target.value === '/'){
+      setLastnum(lastnum);
+    }
+    else{
+      setLastnum(lastnum + e.target.value );
+    }
     setNumeros(numeros + e.target.value); 
     if(resultado === '0'){
       setResultado(e.target.value);
@@ -78,6 +85,7 @@ function App() {
     setAns(eval(numeros));
     setResultado(eval(numeros));
     setNumeros(eval(numeros));
+    console.log(eval(numeros));
   }
 
   return (
