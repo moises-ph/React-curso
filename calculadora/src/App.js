@@ -64,10 +64,32 @@ function App() {
     setNumeros(numeros + '/100');
     setResultado(resultado + '%');
   }
+  
+
+  const logaritmo_baseX = () => {
+    let lastnum_l = lastnum.length;
+    let logaritmo = 'Math.log10(' + lastnum + ')';
+    setNumeros(numeros.slice(0, -(lastnum_l)) + logaritmo);
+    setResultado(resultado.slice(0,-(lastnum_l)) + 'log'+ '(' +lastnum + ')');
+  }
+
+  const raiz_cuadrada = () => {
+    let lastnum_l = lastnum.length;
+    let raiz_cuadrada = 'Math.sqrt(' + lastnum + ')';
+    setNumeros(numeros.slice(0, -(lastnum_l)) + raiz_cuadrada);
+    setResultado(resultado.slice(0,-(lastnum_l)) + '√'+ '(' +lastnum + ')');
+  }
+
+  const logaritmo_nat = () => {
+    let lastnum_l = lastnum.length;
+    let logaritmo = 'Math.log(' + lastnum + ')';
+    setNumeros(numeros.slice(0, -(lastnum_l)) + logaritmo);
+    setResultado(resultado.slice(0,-(lastnum_l)) + 'ln'+ '(' +lastnum + ')');
+  }
 
   const guardar_num = (e) => {
-    if(e.target.value === '+' || e.target.value === '-' || e.target.value === '*' || e.target.value === '/'){
-      setLastnum(lastnum);
+    if(e.target.value === '+' || e.target.value === '-' || e.target.value === '*' || e.target.value === '/' || e.target.value === 'ln'){
+      setLastnum('');
     }
     else{
       setLastnum(lastnum + e.target.value );
@@ -79,6 +101,7 @@ function App() {
     else if(resultado !== '0'){
       setResultado(resultado + e.target.value); 
     }
+    console.log(lastnum)
   };
 
   const realizar = () =>{
@@ -105,22 +128,21 @@ function App() {
             <td><button className='operador' onClick={reset}>AC</button></td>
           </tr>
           <tr>
-            <td></td>
+            <td><button className='operador' onClick={logaritmo_nat} value='ln'>ln</button></td>
             <td><button className='numero' onClick={guardar_num} value='7'>7</button></td>
             <td><button className='numero' onClick={guardar_num} value='8'>8</button></td>
             <td><button className='numero' onClick={guardar_num} value='9'>9</button></td>
             <td><button className='operador' onClick={guardar_num} value='/'>÷</button></td>
           </tr>
           <tr>
-            <td></td>
+            <td><button className='operador' onClick={logaritmo_baseX}>log</button></td>
             <td><button className='numero' onClick={guardar_num} value='4'>4</button></td>
             <td><button className='numero' onClick={guardar_num} value='5'>5</button></td>
-            <td><button className='numero' onClick={guardar_num} value='6'>6</button>
-            </td>
+            <td><button className='numero' onClick={guardar_num} value='6'>6</button></td>
             <td><button className='operador' onClick={guardar_num} value='*'>*</button></td>
           </tr>
           <tr>
-            <td></td>
+            <td><button className='operador' onClick={raiz_cuadrada} value='√'>√</button></td>
             <td><button className='numero' onClick={guardar_num} value='1'>1</button></td>
             <td><button className='numero' onClick={guardar_num} value='2'>2</button></td>
             <td><button className='numero' onClick={guardar_num} value='3'>3</button></td>
