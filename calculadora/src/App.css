@@ -28,7 +28,7 @@
 }
 
 .display {
-  width: 25.37rem;
+  width: 35.8rem;
   height: 6rem;
   padding: 5px;
   margin-left: 4px;
@@ -55,6 +55,10 @@ input:hover{
 
 .operador:hover{
   background-color: #707579;
+}
+
+.operador sup{
+  background-color: #5F6267;
 }
 
 button{
